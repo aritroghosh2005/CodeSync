@@ -13,6 +13,14 @@ dotenv.config();
 
 export const app = express();
 
+// Handle Vercel serverless pre-parsed body so body-parser does not hang on consumed stream
+app.use((req, _res, next) => {
+  if (req.body && typeof req.body === 'object') {
+    (req as any)._body = true;
+  }
+  next();
+});
+
 app.use(express.json({ limit: '20mb' }));
 
 // CORS headers for serverless / multi-origin support
@@ -58,6 +66,13 @@ apiRouter.post('/user/verify-and-login', async (req, res) => {
     }
 
     const normalizedHandle = cfUser.handle.toLowerCase();
+
+    // Check if database connection parameters exist
+    if (!process.env.DATABASE_URL && !process.env.POSTGRES_URL && !process.env.SQL_HOST) {
+      return res.status(500).json({
+        error: 'Database connection configuration is missing. Please add DATABASE_URL (or POSTGRES_URL) in your Vercel Project Settings > Environment Variables.',
+      });
+    }
 
     // Check if user exists in PostgreSQL
     const existing = await db
