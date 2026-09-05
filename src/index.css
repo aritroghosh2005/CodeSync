@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* High Contrast Accessibility Palette & Overrides */
+html.high-contrast,
+body.high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast #codesync-app-header {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #ffffff !important;
+}
+
+.high-contrast main {
+  color: #ffffff !important;
+}
+
+/* High contrast inputs and controls */
+.high-contrast input,
+.high-contrast select,
+.high-contrast textarea {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+.high-contrast input::placeholder,
+.high-contrast textarea::placeholder {
+  color: #a1a1aa !important;
+}
+
+.high-contrast input:focus,
+.high-contrast select:focus,
+.high-contrast textarea:focus {
+  outline: 3px solid #facc15 !important;
+  outline-offset: 1px !important;
+  border-color: #facc15 !important;
+}
+
+/* Keyboard and focus indicators */
+.high-contrast button:focus-visible,
+.high-contrast a:focus-visible {
+  outline: 3px solid #facc15 !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast text legibility improvements */
+.high-contrast .text-zinc-400,
+.high-contrast .text-zinc-500 {
+  color: #d4d4d8 !important;
+}
+
+.high-contrast .text-zinc-300 {
+  color: #f4f4f5 !important;
+}
+
+.high-contrast .text-zinc-600 {
+  color: #a1a1aa !important;
+}
+
+/* High contrast borders and dividers */
+.high-contrast .border-zinc-800,
+.high-contrast .border-zinc-800\/90,
+.high-contrast .border-zinc-800\/80,
+.high-contrast .border-zinc-700 {
+  border-color: #a1a1aa !important;
+}
+
+/* High contrast cards & containers */
+.high-contrast .bg-zinc-950,
+.high-contrast .bg-zinc-900,
+.high-contrast .bg-zinc-900\/90,
+.high-contrast .bg-zinc-900\/80,
+.high-contrast .bg-zinc-900\/60,
+.high-contrast .bg-zinc-950\/85 {
+  background-color: #000000 !important;
+}
+
+/* High contrast navigation */
+.high-contrast #nav-section-switcher {
+  border: 2px solid #ffffff !important;
+  background-color: #0a0a0a !important;
+}
+
+.high-contrast #tab-expeditions,
+.high-contrast #tab-solved-library {
+  font-weight: 700 !important;
+}
+
+.high-contrast .high-contrast-card {
+  border: 2px solid #ffffff !important;
+  background-color: #000000 !important;
+}
+
+/* Strong distinction for checkboxes */
+.high-contrast input[type="checkbox"] {
+  border: 2px solid #ffffff !important;
+  accent-color: #facc15 !important;
+}
+
+/* MathJax Mathematical Formula Styling */
+mjx-container {
+  display: inline-block !important;
+  margin: 0 0.15em !important;
+  color: inherit !important;
+  vertical-align: -0.15em !important;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block !important;
+  margin: 0.85em 0 !important;
+  text-align: center !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35rem 0.5rem;
+  background-color: rgba(24, 24, 27, 0.4);
+  border-radius: 0.5rem;
+}
+
+.high-contrast mjx-container {
+  color: #ffffff !important;
+}
